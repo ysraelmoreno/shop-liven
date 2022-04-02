@@ -3,12 +3,13 @@ const Liven = {
     primary: "#FF7A00",
     secondary: "#125FB3",
     background: "#FAFAFA",
-
+    border: "#EDEDED",
     backgroundPrimary: "#FF7A00",
     backgroundSecondary: "#FF5C00",
 
     primaryHover: "rgba(217, 104, 0, 1)",
     text: "#323232",
+    textSecondary: "rgba(50,50,50, 0.5)",
     textAlternative: "#CCCCCC",
     textLight: "#fff",
   },
