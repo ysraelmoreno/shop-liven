@@ -64,7 +64,6 @@ export const CartProvider = ({ children }: CartProviderProps) => {
 
   const handleAddCartItem = useCallback(
     (cartItem: ICartItem) => {
-      console.log(cartItem);
       const findProductItem = cartItems.find((item) => cartItem.id === item.id);
 
       if (findProductItem) {
@@ -83,10 +82,6 @@ export const CartProvider = ({ children }: CartProviderProps) => {
     },
     [cartItems]
   );
-
-  useEffect(() => {
-    console.log(cartItems);
-  }, [cartItems]);
 
   return (
     <>
