@@ -2,6 +2,7 @@ import { HeaderContainer, Container } from "./styles";
 
 import logo from "../../assets/logo.png";
 import CartItem from "../CartItem";
+import { Link } from "react-router-dom";
 
 function Header(): JSX.Element {
   return (
@@ -18,9 +19,9 @@ function Header(): JSX.Element {
           },
         }}
       >
-        <a href="/">
+        <Link to="/">
           <img src={logo} alt="logo" />
-        </a>
+        </Link>
         <CartItem />
       </Container>
     </HeaderContainer>

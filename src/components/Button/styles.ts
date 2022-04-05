@@ -34,6 +34,7 @@ export const Container = styled("button", {
   },
 
   "&:disabled": {
+    color: "$textSecondary",
     pointerEvents: "none",
   },
 
@@ -41,7 +42,7 @@ export const Container = styled("button", {
     loading: {
       true: {
         "&:after": {
-          backgroundColor: "$gray5",
+          backgroundColor: "$textSecondary",
         },
       },
     },
@@ -78,14 +79,14 @@ export const Container = styled("button", {
       ghost: {
         backgroundColor: "transparent !important",
         border: "none",
-        color: "$gray",
+        color: "$text",
 
         "&:hover": {
           color: "$primary",
         },
 
         "&:disabled": {
-          color: "$gray7",
+          color: "$textSecondary",
         },
       },
     },

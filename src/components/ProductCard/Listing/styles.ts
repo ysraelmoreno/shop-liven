@@ -1,5 +1,5 @@
-import { styled } from "../../styles/Theme.provider";
-import Flex from "../Flex";
+import { styled } from "../../../styles/Theme.provider";
+import Flex from "../../Flex";
 
 export const ProductCardContainer = styled(Flex, {
   maxWidth: "300px",
@@ -7,8 +7,7 @@ export const ProductCardContainer = styled(Flex, {
   margin: "5px",
   padding: "20px 15px",
   borderRadius: "10px",
-  boxShadow: "0 0 5px rgba(0, 0, 0, 0.2)",
-
+  border: "1px solid #e6e6e6",
   img: {
     width: "100%",
     minHeight: "200px",

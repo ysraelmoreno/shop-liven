@@ -1,51 +1,23 @@
 import { Product } from "../../types/Product.types";
 import { CSS } from "../../styles/Theme.provider";
-import Flex from "../Flex";
-import { AiFillStar } from "react-icons/ai";
-import {
-  ProductCardCategory,
-  ProductCardContainer,
-  ProductCardDescription,
-  ProductCardRating,
-  ProductCardTitle,
-} from "./styles";
-import Button from "../Button";
+import ProductListingCard from "./Listing";
+import ProductCartCard from "./Cart";
+import { ICartItem } from "../../hooks/useCart";
 
+type ProductCardType = "listing" | "cart";
 interface ProductCardProps {
-  product: Product;
+  product: Product | ICartItem;
+  type?: ProductCardType;
   css?: CSS;
 }
 
-function ProductCard({ product, css }: ProductCardProps) {
-  return (
-    product && (
-      <>
-        <ProductCardContainer direction="column" css={css}>
-          <Flex>
-            <img src={product.image} alt={product.title} />
-          </Flex>
-          <Flex direction="column">
-            <ProductCardTitle>{product.title}</ProductCardTitle>
-            <Flex css={{ gap: "10px" }}>
-              <ProductCardCategory>
-                {product.category.toUpperCase()}
-              </ProductCardCategory>
-              <ProductCardRating>
-                <AiFillStar />
-                {product.rating.rate}
-              </ProductCardRating>
-            </Flex>
-            <ProductCardDescription>
-              {product.description}
-            </ProductCardDescription>
-          </Flex>
-          <Flex css={{ marginTop: "30px", gap: "10px" }}>
-            <Button>Learn more</Button>
-          </Flex>
-        </ProductCardContainer>
-      </>
-    )
-  );
+function ProductCard({ product, type = "listing", css }: ProductCardProps) {
+  const component: Record<ProductCardType, JSX.Element> = {
+    listing: <ProductListingCard product={product as Product} css={css} />,
+    cart: <ProductCartCard product={product as ICartItem} css={css} />,
+  };
+
+  return component[type];
 }
 
 export default ProductCard;

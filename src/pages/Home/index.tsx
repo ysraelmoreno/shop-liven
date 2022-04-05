@@ -22,9 +22,9 @@ function Home() {
     (async () => {
       try {
         setLoading(true);
-        const products: AxiosResponse<Product[]> = await api.get("/", {
-          timeout: 4000,
-        });
+        const products: AxiosResponse<Product[]> = await api.get("/");
+
+        console.log(products.data);
 
         setProducts(products.data);
         setLoading(false);
@@ -40,7 +40,6 @@ function Home() {
   }, [addToast]);
   return (
     <>
-      <Header />
       <Container>
         <Row>
           <Col sm={12} md={12} lg={12}>
@@ -57,7 +56,7 @@ function Home() {
                   ))
                 : products.map((product) => (
                     <>
-                      <Link to="product">
+                      <Link to={`/product/${product.id}`}>
                         <ProductCard product={product} />
                       </Link>
                     </>
