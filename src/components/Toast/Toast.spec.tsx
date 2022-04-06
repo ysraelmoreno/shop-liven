@@ -1,6 +1,5 @@
-import { render, screen, fireEvent, prettyDOM } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import Toast, { ToastMessage } from ".";
-import { ToastProvider } from "../../hooks/useToast";
 
 const toastMessagesMock: ToastMessage[] = [
   {
