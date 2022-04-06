@@ -6,6 +6,7 @@ export const ProductCartCardContainer = styled(Flex, {
   borderRadius: "10px",
   maxHeight: "170px",
   height: "100%",
+  backgroundColor: "white",
   boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.1)",
 });
 

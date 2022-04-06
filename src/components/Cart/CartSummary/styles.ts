@@ -5,6 +5,6 @@ export const CartSummaryContainer = styled(Flex, {
   boxShadow: "0 0 10px rgba(0,0,0, 0.1)",
   padding: "20px",
   borderRadius: "10px",
-  maxHeight: "170px",
+  minHeight: "200px",
   height: "100%",
 });

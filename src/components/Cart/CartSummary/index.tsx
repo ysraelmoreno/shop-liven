@@ -1,14 +1,12 @@
+import { useCart } from "../../../hooks/useCart";
 import formatPrice from "../../../utils/formatPrice";
 import Button from "../../Button";
 import Flex from "../../Flex";
 import { ProductCurrency } from "../../Product";
 import { CartSummaryContainer } from "./styles";
 
-interface CartSummaryProps {
-  total: number;
-  quantity: number;
-}
-function CartSummary({ total, quantity }: CartSummaryProps) {
+function CartSummary() {
+  const { cartQuantity, cartTotal, handleClearCart } = useCart();
   return (
     <CartSummaryContainer direction="column" justifyContent="spaceBetween">
       <Flex direction="column" css={{ gap: "10px" }}>
@@ -18,7 +16,7 @@ function CartSummary({ total, quantity }: CartSummaryProps) {
           css={{ span: { color: "$textSecondary" } }}
         >
           <span>Total quantity of items</span>
-          <h4>{quantity}</h4>
+          <h4>{cartQuantity}</h4>
         </Flex>
 
         <Flex
@@ -28,12 +26,19 @@ function CartSummary({ total, quantity }: CartSummaryProps) {
         >
           <span>Total</span>
           <h4>
-            <ProductCurrency currency="pt-BR" /> {formatPrice(total)}
+            <ProductCurrency currency="pt-BR" /> {formatPrice(cartTotal)}
           </h4>
         </Flex>
       </Flex>
 
       <Button>Purchase</Button>
+      <Button
+        onClick={handleClearCart}
+        variant="ghost"
+        css={{ fontSize: "0.8rem", height: "fit-content", padding: "0" }}
+      >
+        Clear cart
+      </Button>
     </CartSummaryContainer>
   );
 }

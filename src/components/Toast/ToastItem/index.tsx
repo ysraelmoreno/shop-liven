@@ -3,6 +3,7 @@ import { useToast } from "../../../hooks/useToast";
 import { useEffect } from "react";
 import { ToastItemContainer, ToastItemVariants } from "./styles";
 import Flex from "../../Flex";
+import Button from "../../Button";
 interface ToastItemProps extends ToastItemVariants {
   description?: string;
   title: string;
@@ -43,7 +44,9 @@ function ToastItem({
               },
             }}
           >
-            <FiX onClick={() => removeToast(id)} />
+            <Button onClick={() => removeToast(id)}>
+              <FiX />
+            </Button>
           </Flex>
         </Flex>
       </ToastItemContainer>

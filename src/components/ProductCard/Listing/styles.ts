@@ -7,6 +7,7 @@ export const ProductCardContainer = styled(Flex, {
   margin: "5px",
   padding: "20px 15px",
   borderRadius: "10px",
+  backgroundColor: "white",
   border: "1px solid #e6e6e6",
   img: {
     width: "100%",

@@ -13,6 +13,7 @@ interface ICartContext {
   cartItems: ICartItem[];
   cartQuantity: number;
   cartTotal: number;
+  handleClearCart: () => void;
   handleAddCartItem: (cart: ICartItem) => void;
   handleQuantity: (cartItemInfo: IIncreaseCartQuantity) => void;
 }
@@ -34,6 +35,10 @@ const CartContext = createContext<ICartContext>({} as ICartContext);
 
 export const CartProvider = ({ children }: CartProviderProps) => {
   const [cartItems, setCartItems] = useState<ICartItem[]>([]);
+
+  const handleClearCart = useCallback(() => {
+    setCartItems([]);
+  }, []);
 
   const handleQuantity = useCallback(
     ({ id, quantity }: IIncreaseCartQuantity) => {
@@ -88,6 +93,7 @@ export const CartProvider = ({ children }: CartProviderProps) => {
       <CartContext.Provider
         value={{
           cartTotal,
+          handleClearCart,
           handleAddCartItem,
           handleQuantity,
           cartQuantity,
