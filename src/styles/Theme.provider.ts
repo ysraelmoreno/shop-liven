@@ -3,7 +3,7 @@ import { createStitches, CSS } from "@stitches/react";
 import BYT from "./Liven.theme";
 // import DarkTheme from './Dark.theme';
 
-const { css, styled, globalCss, config, getCssText, keyframes, createTheme } =
+const { css, styled, globalCss, config, getCssText, keyframes } =
   createStitches({
     theme: BYT,
     prefix: "byt-",

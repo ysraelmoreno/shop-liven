@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Header from "../../components/Header";
 import { Col, Container, Row } from "../../components/Layout";
 import api from "../../services/products.api";
 

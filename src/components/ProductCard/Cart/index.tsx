@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useCallback } from "react";
 import { ICartItem, useCart } from "../../../hooks/useCart";
 import { CSS } from "../../../styles/Theme.provider";
 import formatPrice from "../../../utils/formatPrice";

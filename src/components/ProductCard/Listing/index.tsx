@@ -4,7 +4,6 @@ import {
   ProductCardCategory,
   ProductCardContainer,
   ProductCardDescription,
-  ProductCardPrice,
   ProductCardRating,
   ProductCardTitle,
 } from "./styles";

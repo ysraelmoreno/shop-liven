@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Button from "../../components/Button";
 import Flex from "../../components/Flex";
-import Header from "../../components/Header";
 import { Col, Container, Row } from "../../components/Layout";
 import {
   ProductAction,
@@ -21,6 +19,7 @@ function ProductPage() {
   const param = useParams();
 
   const { addToast } = useToast();
+
   useEffect(() => {
     (async () => {
       try {
